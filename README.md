@@ -8,13 +8,13 @@ a solution of data encryption and transportation by using RSA &amp; AES
 #Usage
 
     public static void main(String[] args) throws Exception {
-        HashMap<String, Object> map = RsaseUtils.getKeys();  
-        byte[] plainText = "Test".getBytes();
+        HashMap<String, Object> map = RsaseUtils.getKeys();     //Generate RSA public/private key
+        byte[] plainText = "Test".getBytes();                   //Plain text "Text" -> [84, 101, 115, 116]
         RSAPublicKey publicKey = (RSAPublicKey) map.get("public");  
         RSAPrivateKey privateKey = (RSAPrivateKey) map.get("private");
-        byte[] encrypt = RsaseUtils.encrypt(plainText, publicKey);
-        byte[] decrypt = RsaseUtils.decrypt(encrypt, privateKey);
-        System.out.println(Arrays.toString(plainText));
-        System.out.println(Arrays.toString(decrypt));
+        byte[] encrypt = RsaseUtils.encrypt(plainText, publicKey);  //Encrypt `plainText`
+        byte[] decrypt = RsaseUtils.decrypt(encrypt, privateKey);   //Decrypt `encrypt`
+        System.out.println(Arrays.toString(plainText));     //[84, 101, 115, 116]
+        System.out.println(Arrays.toString(decrypt));       //[84, 101, 115, 116]
     }
 
