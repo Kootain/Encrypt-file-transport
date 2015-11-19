@@ -10,7 +10,7 @@ a solution of data encryption and transportation by using RSA &amp; AES
 `public static void main(String[] args) throws Exception`
 `{  `
 `       HashMap<String, Object> map = RsaseUtils.getKeys();  `
-`       byte[] plainText = "Test".getBytes();
+`       byte[] plainText = "Test".getBytes();`
 `       RSAPublicKey publicKey = (RSAPublicKey) map.get("public"); ` 
 `       RSAPrivateKey privateKey = (RSAPrivateKey) map.get("private");  `
 `       byte[] encrypt = RsaseUtils.encrypt(plainText, publicKey);`
